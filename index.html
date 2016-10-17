@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" > -->
+</head>
+
+
+<div class="menu">
+    <h1>Play Tic Tac Toe </h1>
+    <h4 id="seedText">Choose your seed</h4>
+    <button class ="seed" type="button" name="seed-O">O</button>
+    <button class ="seed" type="button" name="seed-X">X</button>
+    <h4 id="turnText">Who plays first</h4>
+    <button class ="turn" id='User' type="button" name="turn-PC">You</button>
+    <button class ="turn" id='PC' type="button" name="turn-user">PC</button>
+    <h1 id="info"></h1>
+
+    <p class="author"><strong>Created by <a href="https://criamico.github.io/">criamico</a> - 2016</strong></p>
+</div>
+<body>
+    <main>
+            <ul class="board">
+                <li class="grid"><a class="cell" id="00" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="01" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="02" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="10" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="11" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="12" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="20" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="21" href="#">-</a></li>
+                <li class="grid"><a class="cell" id="22" href="#">-</a></li>
+            </ul>
+            <button id="reset-btn" type="button" name="reset-button">RESET </button>
+
+
+
+
+    </main>
+    <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src='tictactoe_app.js'></script>
+</body>
+</html>

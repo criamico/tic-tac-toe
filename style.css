@@ -1,0 +1,88 @@
+body {
+  font-family: Raleway, sans-serif;
+  background-color: #bdd6ec;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  font-size: 1em;
+}
+
+h4 {
+  font-size: 1.6em;
+  font-weight: lighter;
+}
+
+main {
+  text-align: center;
+  width: 70%;
+  height: 100%;
+  margin: 0 25%;
+}
+
+.menu {
+  position: absolute;
+  text-align: center;
+  margin: -10px;
+  width: 25%;
+  height: 100%;
+  padding: 0 2em;
+  background-color: #2f7ec3;
+  color: white;
+}
+
+.author {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 1.4em;
+  margin: 0 10px;
+  background: #ffecd6;
+}
+
+.board {
+  text-align: center;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.grid {
+  background-color: white;
+  border: 2px solid #bdd6ec;
+  border-radius: 7px;
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  height: 30%;
+  margin: 1px -1px;
+}
+.grid .cell {
+  text-decoration: initial;
+  color: #225e8e;
+  font-size: 5em;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
