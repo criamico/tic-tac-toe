@@ -217,7 +217,7 @@
 
             // exit if the game is over
             if (this.isGameOver){
-                console.log(this.turn);
+                // console.log(this.turn);
                 return;
             }
 
@@ -232,12 +232,13 @@
 
                 // add the seed in the graphical board
                 pickId = '#' + newMove[1] + newMove[2];
-                // console.log(pickId);
                 $(pickId).text(this.turn);
                 $(pickId).css('pointer-events', 'none');
 
                 // switch the turn to be ready for next player move
                 this.turn = this.oppSeed;
+                // console.log('current turn', this.getTurn());
+
 
             }
             // player's turn
@@ -255,6 +256,7 @@
 
                 // switch the turn to be ready for next pc move
                 this.turn = this.pcSeed;
+                // console.log('current turn', this.getTurn());
             }
 
             // check if the game is over and who's winning
@@ -284,8 +286,9 @@
             }
             // default first turn if none is picked
             if (fTurn === undefined){
-                game.setFirstTurn(1);
-                console.log(game.getTurn());
+                fTurn = 1;
+                game.setFirstTurn(fTurn);
+                // console.log(game.getTurn());
                 disableTurnButtons('First turn is yours');
             }
 
@@ -293,6 +296,7 @@
                 newMove = [Number($(this).attr('id')[0]), Number($(this).attr('id')[1])];
                 output = game.handleTurns(newMove);
                 formatOutput(output);
+
 
                 window.setTimeout(function() {
                     output = game.handleTurns();
@@ -303,7 +307,7 @@
 
         }
 
-        // displays the output in the ui
+        // displays the output in the UI
         function formatOutput(arr){
             if (arr !== undefined && arr[0]){
                 if (arr[1].length === 1)
@@ -331,29 +335,27 @@
             $('#turnText').text('Who plays first');
         }
 
+        // disable both the buttons and change the text
         function disableSeedButtons(seed){
-            // disable both the buttons and change the text
             $('.seed').attr("disabled", true);
             $('#seedText').text('Your seed: ' + seed);
         }
 
+        //disable both the buttons
         function disableTurnButtons(text){
-            //disable both the buttons
             $('.turn').attr("disabled", true);
             $('#turnText').text(text);
-            console.log('turn', seed);
         }
 
         // on button clicked, set the player's seed
         function chooseSeed(){
             seed = $(this).text();
+
             // set the seeds
             game.setSeed($(this).text());
 
             // now disable both the buttons and change the text
             disableSeedButtons(seed);
-            // $('.seed').attr("disabled", true);
-            // $('#seedText').text('Your seed: ' + seed);
         }
 
         function pickFirstTurn(){
@@ -369,12 +371,10 @@
             }
 
             game.setFirstTurn(fTurn);
+
              // now disable both the buttons
             disableTurnButtons(newText);
-            //
-            // $('.turn').attr("disabled", true);
-            // $('#turnText').text(newText);
-            // console.log('turn', seed);
+
 
             // if first turn for the pc, execute the first move
             if (fTurn === 0){
