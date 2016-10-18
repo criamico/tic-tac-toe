@@ -1,0 +1,173 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+a#menu svg {
+  width: 40px;
+  fill: #000;
+}
+
+nav, main {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+main {
+  color: #3e3939;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  background-color: #bdd6ec;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.6em;
+}
+
+p, h2, h3, h4 {
+  font-weight: lighter;
+}
+
+#drawer {
+  background-color: #2f7ec3;
+  color: white;
+  text-align: center;
+  margin: -10px;
+  z-index: 10;
+}
+
+#menu {
+  text-align: left;
+}
+
+.author {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 1.4em;
+  margin: 0 10px;
+  background: #ffecd6;
+  color: #3e3939;
+}
+
+.board {
+  text-align: center;
+  margin: 10% auto 5% auto;
+  width: 300px;
+  height: 300px;
+  font-weight: normal;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.grid {
+  background-color: white;
+  border: 2px solid #bdd6ec;
+  border-radius: 7px;
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  height: 30%;
+  margin: 1px -1px;
+}
+.grid .cell {
+  text-decoration: initial;
+  color: #225e8e;
+  font-size: 5em;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.top, .bottom {
+  text-align: center;
+}
+
+.top {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  right: 0;
+}
+
+/*
+* Off-canvas layout styles.
+*/
+/* By default the drawer is hidden. */
+nav {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  transform: translate(-300px, 0);
+  -webkit-transform: translate(-300px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+nav.open {
+  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+
+/* If there is enough space (> 600px), we keep the drawer open all the time. */
+@media (min-width: 600px) {
+  /* We open the drawer. */
+  nav {
+    position: relative;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+  }
+
+  #menu {
+    display: none;
+  }
+
+  /* We use Flexbox on the parent. */
+  body {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
+  }
+
+  main {
+    width: auto;
+    /* Flex-grow streches the main content to fill all available space. */
+    flex-grow: 1;
+  }
+}
+/* If there is space (> 800px), we keep the drawer open by default. */
+
+/*# sourceMappingURL=style.css.map */
