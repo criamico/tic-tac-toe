@@ -323,7 +323,7 @@
         function onResetButton(){
             game.reset();
             $cells.css('pointer-events', 'auto');
-            $cells.text('-');
+            $cells.text(' ');
             $('#info').text('');
 
             // enable all the buttons
@@ -374,7 +374,6 @@
 
              // now disable both the buttons
             disableTurnButtons(newText);
-
 
             // if first turn for the pc, execute the first move
             if (fTurn === 0){

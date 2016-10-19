@@ -77,7 +77,7 @@ button {
 
 .board {
   text-align: center;
-  margin: 10% auto 5% auto;
+  margin: 20% auto 5% auto;
   width: 300px;
   height: 300px;
   font-weight: normal;
@@ -97,6 +97,7 @@ ul li {
   border-radius: 7px;
   display: inline-block;
   position: relative;
+  vertical-align: top;
   width: 30%;
   height: 30%;
   margin: 1px -1px;
