@@ -121,12 +121,13 @@
             // check if pc wins
             if (pcWins){
                 this.isGameOver = true;
+                // console.log(this.isGameOver);
                 return [this.isGameOver, this.pcSeed];
             }
 
             // check if user wins
             if (oppWins){
-                console.log('gameover', this.oppSeed, 'won!');
+                // console.log(this.isGameOver);
                 this.isGameOver = true;
                 return [this.isGameOver, this.oppSeed];
             }
@@ -217,7 +218,7 @@
 
             // exit if the game is over
             if (this.isGameOver){
-                // console.log(this.turn);
+                // console.log('exit');
                 return;
             }
 
@@ -276,7 +277,7 @@
 
         function onCellsClick(){
             var newMove = [];
-
+            // console.log(seed, fTurn,game.getTurn());
             // choose a default seed if none is picked
             if (seed === undefined){
                 seed = 'O';
@@ -296,12 +297,15 @@
                 newMove = [Number($(this).attr('id')[0]), Number($(this).attr('id')[1])];
                 output = game.handleTurns(newMove);
                 formatOutput(output);
-
+                // if (output[0] === true){
+                //     onResetButton();
+                // }
 
                 window.setTimeout(function() {
                     output = game.handleTurns();
                     formatOutput(output);
                 }, 1000);
+
 
             }
 
@@ -314,11 +318,16 @@
                     $('#info').text(arr[1] + ' won!');
                 else
                     $('#info').text(arr[1]);
+
+                // wait 2 seconds and reset game
+                window.setTimeout(function() {
+                        onResetButton();
+                }, 2000);
             }
         }
 
-        // when reset is clicked,
         // the internal board is cleared
+        // when reset is clicked,
         // the cells are reset at the initial state and clickable
         function onResetButton(){
             game.reset();
